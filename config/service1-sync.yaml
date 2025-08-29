@@ -1,0 +1,59 @@
+openapi: 3.0.1
+info:
+  title: Service1
+  description: The Service is responsible for managing data
+  version: 1.0-SNAPSHOT
+security:
+  - bearerAuth: []
+paths:
+  /data:
+    post:
+      summary: |
+        Creates a new data
+      operationId: createData
+    requestBody:
+        required: true
+        content:
+          'application/json':
+            schema:
+              $ref: '#/components/schemas/CreateDataRequest'
+    responses:
+      '201':
+        description: Returns the created data
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Data'
+components:
+  schemas:
+    DataUuid:
+      type: string
+      format: uuid
+    Channel:
+      type: string
+      enum:
+        - EMAIL
+        - WEB
+    CreateDataRequest:
+      required:
+        - firstName
+        - lastName
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+    Data:
+      required:
+        - firstName
+        - uuid
+        - lastName
+      type: object
+      properties:
+        firstName:
+          type: string
+        uuid:
+          $ref: '#/components/schemas/DataUuid'
+        lastName:
+          type: string

@@ -1,0 +1,33 @@
+openapi: 3.0.1
+info:
+  title: Messaging API for service
+  description: An OpenAPI spec used for code generation for messaging
+  version: 1.0-SNAPSHOT
+paths: {}
+components:
+  schemas:
+    CreateDataCommand:
+      description: |
+        This command will try to create data.
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/CreateData'
+    CreateData:
+      type: object
+      required:
+        - uuid
+        - firstName
+        - lastName
+        - channel
+      properties:
+        uuid:
+          $ref: 'openapi.yaml#/components/schemas/DataUuid'
+        firstName:
+          type: string
+        lastName:
+          type: string
+        channel:
+          $ref: 'openapi.yaml#/components/schemas/Channel'
