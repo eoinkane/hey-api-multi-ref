@@ -11,19 +11,19 @@ paths:
       summary: |
         Creates a new data
       operationId: createData
-    requestBody:
+      requestBody:
         required: true
-        content:
-          'application/json':
-            schema:
-              $ref: '#/components/schemas/CreateDataRequest'
-    responses:
-      '201':
-        description: Returns the created data
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Data'
+              $ref: '#/components/schemas/CreateDataRequest'
+      responses:
+        '201':
+          description: Returns the created data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Data'
 components:
   schemas:
     DataUuid:
