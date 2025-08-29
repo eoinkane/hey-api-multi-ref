@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "generate:sync": "tsx generate-types.ts",
+    "generate:async": "tsx generate-async-types.ts"
   },
   "author": "",
   "license": "ISC",
