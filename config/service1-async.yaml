@@ -31,3 +31,28 @@ components:
           type: string
         channel:
           $ref: 'service1-sync.yaml#/components/schemas/Channel'
+    RetrieveDataCommand:
+      description: |
+        This command will try to retrieve data.
+      required:
+        - data
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/RetrieveData'
+    RetrieveData:
+      type: object
+      required:
+        - uuid
+        - firstName
+        - lastName
+        - channel
+      properties:
+        uuid:
+          $ref: 'service1-sync.yaml#/components/schemas/DataUuid'
+        firstName:
+          type: string
+        lastName:
+          type: string
+        channel:
+          $ref: 'service1-sync.yaml#/components/schemas/Channel'
