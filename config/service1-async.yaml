@@ -24,10 +24,10 @@ components:
         - channel
       properties:
         uuid:
-          $ref: 'openapi.yaml#/components/schemas/DataUuid'
+          $ref: 'service1-sync.yaml#/components/schemas/DataUuid'
         firstName:
           type: string
         lastName:
           type: string
         channel:
-          $ref: 'openapi.yaml#/components/schemas/Channel'
+          $ref: 'service1-sync.yaml#/components/schemas/Channel'
